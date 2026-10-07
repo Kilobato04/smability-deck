@@ -95,10 +95,10 @@ button{font:inherit;color:inherit}
   color:#03121c;font-weight:800;font-size:1rem;
   box-shadow:0 6px 18px rgba(34,211,238,.25);
 }
-/* Logo: si existe images/logo-smability-mark.svg se superpone a la "S" de respaldo */
-.brand-mark{position:relative;overflow:hidden}
-.brand-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--bg)}
-.brand-logo{height:30px;width:auto;display:block}
+/* Logo: images/smability-logo-white.png. Si no carga, se muestra la "S" + texto de respaldo */
+.brand-logo{height:32px;width:auto;max-width:200px;object-fit:contain;display:block}
+.brand-fallback{display:flex;align-items:center;gap:14px}
+.brand-fallback[hidden]{display:none}
 .brand-name{font-size:1.15rem;font-weight:700;letter-spacing:.01em}
 .brand-sep{width:1px;height:22px;background:var(--line)}
 .brand-client{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3)}
