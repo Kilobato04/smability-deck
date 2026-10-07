@@ -34,8 +34,9 @@
 </div>
 
 <header class="brand">
-  <span class="brand-mark" aria-hidden="true">S<img src="images/logo-smability-mark.svg" alt="" onerror="this.remove()"></span>
-  <span class="brand-name">Smability</span>
+  <img class="brand-logo" src="images/smability-logo-white.png" alt="Smability"
+       onerror="this.remove(); document.querySelector('.brand-fallback').hidden = false;">
+  <span class="brand-fallback" hidden><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">Smability</span></span>
   <span class="brand-sep"></span>
   <span class="brand-client">Corredor Verde · Guatemala</span>
 </header>
