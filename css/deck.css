@@ -29,6 +29,10 @@
 
   --gutter:clamp(20px,4vw,64px);
   --top:clamp(88px,12vh,116px);
+  /* Espacio reservado a la derecha para la etiqueta "Powered by Netlify" (esquina inferior derecha).
+     Si se desactiva la etiqueta en Netlify, cambiar a 0px. */
+  --badge-space:210px;
+  --bar-bottom:clamp(28px,3.6vh,36px);
   --bottom:clamp(92px,12vh,112px);
 
   --font:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
@@ -96,7 +100,7 @@ button{font:inherit;color:inherit}
   box-shadow:0 6px 18px rgba(34,211,238,.25);
 }
 /* Logo: images/smability-logo-white.png. Si no carga, se muestra la "S" + texto de respaldo */
-.brand-logo{height:32px;width:auto;max-width:200px;object-fit:contain;display:block}
+.brand-logo{height:48px;width:auto;max-width:300px;object-fit:contain;display:block}
 .brand-fallback{display:flex;align-items:center;gap:14px}
 .brand-fallback[hidden]{display:none}
 .brand-name{font-size:1.15rem;font-weight:700;letter-spacing:.01em}
@@ -105,7 +109,7 @@ button{font:inherit;color:inherit}
 
 /* Aviso de confidencialidad */
 .conf-badge{
-  position:fixed;top:clamp(26px,3.8vh,38px);left:50%;transform:translateX(-50%);z-index:30;
+  position:fixed;top:clamp(26px,3.8vh,38px);right:calc(var(--gutter) + 44px);z-index:30;
   display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
   border:1px solid rgba(251,191,36,.4);background:rgba(251,191,36,.08);color:#fbbf24;
   font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
@@ -377,7 +381,7 @@ th.col-amt{text-align:right;font-size:.68rem;color:var(--text-3)}
 
 /* ---------- 10. Footer ---------- */
 .bar{
-  position:fixed;left:var(--gutter);right:var(--gutter);bottom:clamp(28px,3.6vh,36px);z-index:30;
+  position:fixed;left:var(--gutter);right:calc(var(--gutter) + var(--badge-space));bottom:var(--bar-bottom);z-index:30;
   display:flex;justify-content:space-between;align-items:center;gap:16px;pointer-events:none;
 }
 .bar>*{pointer-events:auto}
@@ -400,7 +404,7 @@ th.col-amt{text-align:right;font-size:.68rem;color:var(--text-3)}
 
 /* Índice */
 .index{
-  position:fixed;left:var(--gutter);bottom:calc(clamp(28px,3.6vh,36px) + 54px);z-index:40;
+  position:fixed;left:var(--gutter);bottom:calc(var(--bar-bottom) + 54px);z-index:40;
   width:min(400px,calc(100vw - 2 * var(--gutter)));max-height:70vh;overflow:auto;padding:8px;
   background:rgba(8,14,27,.96);border:1px solid var(--line);border-radius:16px;
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 24px 60px rgba(0,0,0,.55);
@@ -440,6 +444,9 @@ th.col-amt{text-align:right;font-size:.68rem;color:var(--text-3)}
 @media (max-width:1100px){
   .cards--2.metrics,.panel--wide .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+@media (max-width:1240px){
+  .social:not(.brand-link){display:none}
+}
 @media (max-width:900px){
   .panel,.panel--portfolio,.panel--wide{width:100%}
   .panel-head{flex-direction:column}
@@ -448,11 +455,20 @@ th.col-amt{text-align:right;font-size:.68rem;color:var(--text-3)}
   .cards--2{grid-template-columns:1fr}
   .brand-sep,.brand-client,.social,.actions .sep{display:none}
   .slide-title,.hide-sm{display:none}
-  .conf-badge{left:auto;right:var(--gutter);transform:none}
   .parts{grid-template-columns:1fr}
   .col-id,.col-year,.cl-desc{display:none}
 }
 @media (max-height:800px){
+  h2{font-size:clamp(1.5rem,2.3vw,2.1rem);margin-bottom:8px}
+  .lead{font-size:.95rem;line-height:1.5}
+  .panel{padding:clamp(20px,2.2vw,30px)}
+  .step{padding-bottom:16px}
+  .timeline{margin-top:20px}
+  .step-text{font-size:.92rem}
+  .cards--stack .card{padding:14px 16px}
+  .chips{margin-top:14px}
+  .note{margin-top:12px;padding:10px 12px}
+  .note--compact{margin-top:8px;padding:0}
   .panel--cover .hint{display:none}
   .parts{margin-top:24px}
   .panel--cover .cover-meta{margin-top:22px;padding-top:18px}
