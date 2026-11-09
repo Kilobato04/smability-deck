@@ -44,11 +44,13 @@ const PORTFOLIO_CENTER = (() => {
 // pad: 'side' = deja libre el panel izquierdo; markers: 'none' | 'all' | 'client'
 const VIEWS = [
   { center: [-62, 12],         zoom: 1.7,  pitch: 0,  bearing: 0,   pad: 'none', markers: 'none', spin: true },
+  { focus: 'client',           zoom: 12.6, pitch: 50, bearing: -10, pad: 'none', markers: 'client', orbit: true }, // Resumen ejecutivo
   { center: [-89.2, 15.2],     zoom: 4.9,  pitch: 25, bearing: 0,   pad: 'side', markers: 'none' },
   { center: [-90.55, 14.55],   zoom: 9.2,  pitch: 55, bearing: -20, pad: 'side', markers: 'none' },
   { center: PORTFOLIO_CENTER,  zoom: 11.1, pitch: 45, bearing: -15, pad: 'side', markers: 'all', responsiveZoom: true },
   { focus: 'client',           zoom: 14.6, pitch: 60, bearing: 25,  pad: 'side', markers: 'client' },  // El reto: llegada al sitio
   { focus: 'client',           zoom: 15.2, pitch: 66, bearing: -20, pad: 'side', markers: 'client' },  // Objetivos: órbita cercana
   { focus: 'client',           zoom: 13.4, pitch: 58, bearing: 40,  pad: 'side', markers: 'client' },  // Plan: contexto urbano
+  { focus: 'client',           zoom: 14.0, pitch: 55, bearing: 10,  pad: 'side', markers: 'client' },  // Inversión
   { center: [-90.5132, 14.6349], zoom: 11.5, pitch: 45, bearing: 0, pad: 'none', markers: 'none', orbit: true } // Cierre
 ];

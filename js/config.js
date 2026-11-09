@@ -5,7 +5,7 @@ const CONFIG = {
   mapStyle: 'mapbox://styles/mapbox/dark-v11',
   terrain: true,          // relieve 3D (volcanes alrededor de la Ciudad de Guatemala)
   buildings3D: true,      // edificios extruidos en zoom de ciudad
-  clientProjectId: 4,     // Corredor Verde: se resalta en las láminas 5–7
+  clientProjectId: 4,     // Corredor Verde: se resalta en las láminas 2 y 6–9
   // Lectura en vivo del sensor acústico (lámina 5). Ej.: 'https://api.airegpt.ai/gt/SMAA_002/latest'
   // Respuesta esperada: { "device": "SMAA_002", "dba": 62.4, "updated_at": "2026-10-05T18:00:00Z" }
   liveFeed: { url: null, refreshMs: 60000 }
